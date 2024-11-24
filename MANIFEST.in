@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include lawmes *.css
+recursive-include lawmes *.csv
+recursive-include lawmes *.html
+recursive-include lawmes *.ico
+recursive-include lawmes *.js
+recursive-include lawmes *.json
+recursive-include lawmes *.md
+recursive-include lawmes *.png
+recursive-include lawmes *.py
+recursive-include lawmes *.svg
+recursive-include lawmes *.txt
+recursive-exclude lawmes *.pyc
