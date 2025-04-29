@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@page {
+    size: A4 portrait;
+    margin: 10mm;
+}
+
+html, body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+}
+
+section, div, p, li, h3, table, tr, td {
+    page-break-inside: avoid;
+    page-break-before: auto;
+    page-break-after: auto;
+}
+
+.print-format {
+    padding: 0.10in;
+}
+
+.report-header {
+    margin-right: 35px;
+    margin-left: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    direction: {{ "rtl" if frappe.local.lang == "ar" else "ltr" }};
+}
+
+.header-logo {
+    width: 70px;
+}
+
+.header-text {
+    padding: 0 15px;
+}
+
+.content {
+    padding: 10px;
+}
+
+.header-right, .header-left {
+    font-weight: bold;
+}
+
+.tr, td {
+    padding: 8px;
+    border: 1px solid blue;
+    text-align: center;
+    font-size: 17px;
+}
+
+.table {
+    border-radius: 50px;
+}
+
+.bord {
+    border: 1px solid blue;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    padding: 0 6px;
+    margin: 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 17px;
+    padding: 1px 0;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.num {
+    font-weight: bold;
+    float: left;
+}
+
+li {
+    font-weight: bold;
+}
+
+.col {
+    background-color: #f1e7d9;
+    font-size: 20px;
+}
+
+.prg, .date {
+    font-size: 20px;
+}
+
+section {
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+checkbox {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.low, .day, .judc, .folwing {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.lowyer {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.end {
+    font-size: 11px;
+}
+
+.outo {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Email {
+    margin: 300px;
+}
+
+.Emailjan {
+    margin: 150px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="report-header">
+    <div class="header-right">
+        <p>REPUBLIC OF YEMEN</p>
+        <p style="font-size: 11px; color:blue; text-align: center;">BAR ASSOCIATION</p>
+        <p style="font-size: 13px; text-align: center;">AL-Ghorafi Low Office</p>
+    </div>
+
+    <div class="header-text">
+        <img src="http://127.0.0.1:8000/private/files/%D9%A2%D9%A0%D9%A2%D9%A4%D9%A0%D9%A3%D9%A2%D9%A3_%D9%A1%D9%A8%D9%A3%D9%A1%D9%A5%D9%A2.jpg" alt="Logo" class="header-logo">
+    </div>
+
+    <div class="header-left">
+        <p>«·Ã„ÂÊ—Ì… «·Ì„‹‰Ì…</p>
+        <p style="font-size: 12px; color:blue; text-align: center;">‰ﬁ«»… «·„Õ«„Ì‰</p>
+        <p style="font-size: 13px; text-align: center;">„ﬂ » «·€—«›Ì ··„Õ«„«…</p>
+    </div>
+</div>
+
+<div style="margin-right:10px; margin-left:10px;">
+    <p class="bord" dir="auto" style="width:750px; background-color:#ddddddab;">
+        «” ‘«—«  ﬁ«‰Ê‰Ì…‹‹  ÕﬂÌ„ ‹‹ «»—«„ «·⁄ﬁÊœ Ê«·« ›«ﬁÌ«  Ê ÊÀÌﬁÂ« ‹‹  √”Ì” ‘—ﬂ«  ‹‹  ”ÃÌ· «·⁄·«„«  «· Ã«—Ì… ÊÕ„«Ì… «·ÕﬁÊﬁ «·’‰«⁄Ì… Ê«·›ﬂ—Ì…
+    </p>
+</div>
+
+<section dir="auto">
+    <h3>
+        <u style="font-weight:bold; font-size:25px"> ﬁ—Ì—  ‰›Ì– „⁄«„·‹‹‹‹…</u>
+        <div class="num">
+            <p>»—ﬁ‹‹‹‹‹‹„ (<span style="padding: 3px; color: blue; text-decoration-style: dotted;">{{doc.session_id}}</span>)</p>
+        </div>
+    </h3>
+
+    <div class="col">
+        <li>„⁄·Ê„‹‹‹‹‹‹‹«  ⁄‹‹‹‹‹‹‹«„… :</li>
+    </div>
+
+    <div>
+        <b>„Êﬂ·‰‹‹‹‹« : <span style="padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.clientgender}}</span>/<span style="padding:2px; color: blue; text-decoration-style: dotted;">{{doc.client}}</span></b>
+        <b style="margin: 11px;">›Ì «·ﬁ÷Ì… «·„‰ŸÊ—… ·œÏ <span style="padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.court}}</span></b>
+    </div>
+
+    <div dir="auto">
+        <b>»—ﬁ„ (<span style="font-size: 13px; padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.case_subject}}</span>/<span style="font-size: 13px; padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.case_date}}</span>Â‹)</b>
+        <b style="margin: 79px;"> «„«„ «·ﬁ«÷Ì/ <span style="padding: 3px; color: blue; text-decoration-style: dotted;">{{doc.judges_tran}}</span></b>
+    </div>
+
+    <b>÷‹‹‹‹‹‹‹‹‹‹œ «·Œ’„/ <span style="padding: 3px; color: blue; text-decoration-style: dotted;">{{doc.opponent_tran}}</span></b>
+
+    <hr style="border:1px solid black">
+
+    <p class="date">≈‰Â Ê›Ì ÌÊ„ <span style="font-size: 15px; padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.day_name}}</span>
+    » «—ÌŒ <span style="font-size: 15px; padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.hijri_date}}</span> Â‹
+    «·„Ê«›ﬁ <span style="font-size: 15px; padding: 2px; color: blue; text-decoration-style: dotted;">{{doc.gregorian_date}}</span>„
+     „  ‰›Ì– „⁄«„·… „Êﬂ·‰« Ê›ﬁ«Û ··≈Ã—«¡«  «· «·Ì…:</p>
+
+    <li style="height: 150px">
+        <b class="low"><u>«·Âœ› „‰  ‰›Ì– «·„⁄«„·…:</u></b>
+        <p style="font-size: 15px; padding: 1px; color: blue; text-decoration-style: dotted; max-width: 680px; white-space: normal; overflow-wrap: break-word;">
+            {{doc.session_decision}}
+        </p>
+    </li>
+
+    <li style="height: 210px">
+        <b class="day"><u>«·≈Ã—«¡«  «· Ì  „  ›Ì ÌÊ„‰« Â–«:</u></b>
+        <p style="font-size: 15px; padding: 1px; color: blue; text-decoration-style: dotted; max-width: 680px; white-space: normal; overflow-wrap: break-word;">
+            {{doc.session_decision}}
+        </p>
+    </li>
+
+    <b class="judc">
+        <u> ﬁÌÌ„ ≈‰Ã«“ «·„⁄«„·…:</u><br>
+     <div style="font-weight: bold; font-size: 20px;">
+    <label>
+        <input type="checkbox" name="⁄ﬁœ «·Ã·”…" value=" „ ≈‰Ã«“ «·„⁄«„·…" {% if doc.evaluation_report == " „ ≈‰Ã«“ «·„⁄«„·…" %}checked{% endif %}>
+         „ ≈‰Ã«“ «·„⁄«„·…
+    </label>
+    <label style="margin-right: 20px;">
+        <input type="checkbox" name="«· √ÃÌ· ≈œ«—Ì«" value="·„ Ì „ ≈‰Ã«“ «·„⁄«„·…" {% if doc.evaluation_report == "·„ Ì „ ≈‰Ã«“ «·„⁄«„·…" %}checked{% endif %}>
+        ·„ Ì „ ≈‰Ã«“ «·„⁄«„·…
+    </label>
+</div>
+
+
+
+    </b>
+
+    <div style="height: 160px">
+        <b class="folwing"><u>«· Ê’Ì‹‹‹‹‹‹‹‹‹‹« :</u></b>
+        <p style="font-size: 16px; padding: 1px; color: blue; text-decoration-style: dotted; max-width: 680px; white-space: normal; overflow-wrap: break-word;">
+            {{doc.recommendations}}
+        </p>
+    </div>
+
+    <p style="float:left;">
+        <b class="lowyer">«·„Õ‹‹‹‹«„Ì: <span style="font-size: 13px; padding: 4px; color: blue; text-decoration-style: dotted;">{{doc.lawyers}}</span></b>
+        <b class="lowyer">«· ÊﬁÌ⁄:</b> ...........................
+    </p>
+</section>
+
+<h2 style="background-color:#f2fafa;">
+    <li dir="auto" style="text-align: center;">
+        «·⁄‰Ê«‰:
+        <u style="font-size:10px;">«„«‰… «·⁄«’„… ’‰⁄«¡ «·” Ì‰ «·‘„«·Ì ‹‹ ‘ 24 ‹‹ Œ·› ›‰œﬁ ≈Ì”‰</u>
+    </li>
+    <div class="outo" dir="auto">
+        <span>·· Ê«’‹‹·:</span>
+        <span class="Email">≈Ì„Ì‹‹‹·:</span>
+    </div>
+</h2>
+
+</body>
+</html>
+
+     // ﬂÊœ css//
+     
+     
+     
+     .bord {
+    border: 1px solid blue;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    padding: 0 6px;
+    margin: 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 17px;
+    padding: 1px 0;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.num {
+    font-weight: bold;
+    float: left;
+}
+
+li {
+    font-weight: bold;
+}
+
+.col {
+    background-color: #f1e7d9;
+    font-size: 20px;
+}
+
+.prg, .date {
+    font-size: 20px;
+}
+
+section {
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin: 0 5px;
+}
+
+.low, .day, .judc, .folwing {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.lowyer {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.end {
+    font-size: 11px;
+}
+
+.outo {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Email {
+    margin-top: 50px;
+}
+
+.Emailjan {
+    margin-top: 30px;
+}
