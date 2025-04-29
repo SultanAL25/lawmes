@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{case_subject}-({session_id}) : \u0627\u0644\u062c\u0644\u0633\u0629 \u0631\u0642\u0645",
+ "creation": "2024-11-25 19:11:52.379388",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "session_data_tab",
+  "case_subject",
+  "session_id",
+  "gregorian_date",
+  "hijri_date",
+  "day_name",
+  "session_content",
+  "attachment",
+  "column_break_sllop",
+  "case_date",
+  "case_id",
+  "client",
+  "client_gender",
+  "opponent",
+  "lawyers",
+  "court",
+  "judge",
+  "section_break_buzw2",
+  "session_decision",
+  "section_break_dbalc",
+  "court_decisions",
+  "section_break_mk8pw",
+  "recommendations",
+  "tab_break_6aqev",
+  "next_session_date",
+  "next_session_notification",
+  "previous_decision"
+ ],
+ "fields": [
+  {
+   "fieldname": "session_data_tab",
+   "fieldtype": "Tab Break",
+   "label": "Session Data"
+  },
+  {
+   "description": "\u0639\u062f\u062f \u0627\u0644\u062c\u0644\u0633\u0627\u062a",
+   "fieldname": "session_id",
+   "fieldtype": "Autocomplete",
+   "label": "Session_id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "case_subject",
+   "fieldtype": "Link",
+   "label": "Case_Subject",
+   "options": "case"
+  },
+  {
+   "fieldname": "session_content",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Session_Content",
+   "options": "\u0639\u0642\u062f \u0627\u0644\u062c\u0644\u0633\u0629\n\u0627\u0644\u062a\u0640\u0623\u062c\u064a\u0644 \u0625\u062f\u0627\u0631\u064a\u0627\u064e\n\u0627\u0633\u062a\u0628\u0639\u0627\u062f \u0627\u0644\u062c\u0644\u0633\u0629"
+  },
+  {
+   "description": "\u0627\u0644\u0627\u062c\u0631\u0627\u0621\u0627\u062a \u0627\u0644\u062a\u064a \u062a\u0645\u0629 \u0641\u064a \u064a\u0648\u0645\u0646\u0627 \u0647\u0630\u0627",
+   "fieldname": "session_decision",
+   "fieldtype": "Long Text",
+   "label": "Session_Decision",
+   "options": "\u0627\u0644\u0625\u062c\u0631\u0627\u0621\u0627\u062a \u0627\u0644\u062a\u064a \u062a\u0645\u0629 \u0641\u064a \u064a\u0648\u0645\u0646\u0627 \u0647\u0630\u0627"
+  },
+  {
+   "fieldname": "column_break_sllop",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u0642\u0631\u0627\u0631\u0627\u062a \u0627\u0644\u0645\u062d\u0643\u0645\u0629",
+   "fieldname": "court_decisions",
+   "fieldtype": "Small Text",
+   "label": "Attendance report"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Table",
+   "label": "Attachment",
+   "options": "Attachmentss"
+  },
+  {
+   "fieldname": "tab_break_6aqev",
+   "fieldtype": "Tab Break",
+   "label": "Upcoming Sessions"
+  },
+  {
+   "description": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062c\u0644\u0633\u0629 \u0627\u0644\u0642\u0627\u062f\u0645\u0629",
+   "fieldname": "next_session_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Next_Session_Date "
+  },
+  {
+   "default": "0",
+   "fieldname": "next_session_notification",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Next_Session_Notification"
+  },
+  {
+   "fieldname": "previous_decision",
+   "fieldtype": "Data",
+   "label": "Previous Decision",
+   "options": "\u0627\u0644\u0642\u0631\u0627\u0631\u0629 \u0627\u0644\u0633\u0627\u0628\u0642\u0629"
+  },
+  {
+   "description": "\u0627\u0644\u062a\u0648\u0635\u064a\u0627\u062a",
+   "fieldname": "recommendations",
+   "fieldtype": "Small Text",
+   "label": "Recommendations"
+  },
+  {
+   "fetch_from": "case_subject.info_id",
+   "fieldname": "case_id",
+   "fieldtype": "Data",
+   "label": "case Id",
+   "no_copy": 1,
+   "options": "case",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "case_subject.client_name",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "client",
+   "options": "clintes",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "case_subject.opponents_name",
+   "fieldname": "opponent",
+   "fieldtype": "Link",
+   "label": "Opponent",
+   "options": "Opponentss",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "case_subject.judge_name",
+   "fieldname": "judge",
+   "fieldtype": "Link",
+   "label": "Judge",
+   "options": "Judges",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "case_subject.lawyer_name",
+   "fieldname": "lawyers",
+   "fieldtype": "Link",
+   "label": "lawyers",
+   "options": "lawyerss",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_buzw2",
+   "fieldtype": "Section Break",
+   "label": "Session Decision"
+  },
+  {
+   "fieldname": "section_break_dbalc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_mk8pw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "case_subject.court",
+   "fieldname": "court",
+   "fieldtype": "Link",
+   "label": "Court",
+   "options": "Court",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client.clientgender",
+   "fieldname": "client_gender",
+   "fieldtype": "Data",
+   "label": "client_gender",
+   "options": "client",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gregorian_date",
+   "fieldtype": "Date",
+   "label": "Session_Date"
+  },
+  {
+   "fieldname": "hijri_date",
+   "fieldtype": "Data",
+   "label": "Hijri Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "day_name",
+   "fieldtype": "Data",
+   "label": "day_name ",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "case_subject.hijri_date",
+   "fieldname": "case_date",
+   "fieldtype": "Data",
+   "label": "case_date",
+   "options": "case",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-15 15:53:35.951104",
+ "modified_by": "Administrator",
+ "module": "Lawmes",
+ "name": "sessions",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

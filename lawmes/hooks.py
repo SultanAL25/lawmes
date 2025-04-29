@@ -7,6 +7,9 @@ app_description = "lawmes management"
 app_email = "lawmes@management.com"
 app_license = "MIT"
 
+
+fixtures = ["Custom Field"]
+
 # Includes in <head>
 # ------------------
 

@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-25 23:58:54.741656",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sessions_case",
+  "case_subject",
+  "session_id",
+  "session_content"
+ ],
+ "fields": [
+  {
+   "fieldname": "sessions_case",
+   "fieldtype": "Link",
+   "label": "Sessions Case",
+   "options": "sessions"
+  },
+  {
+   "fieldname": "case_subject",
+   "fieldtype": "Data",
+   "label": "Case_Subject"
+  },
+  {
+   "fieldname": "session_id",
+   "fieldtype": "Data",
+   "label": "Session_id"
+  },
+  {
+   "fieldname": "session_content",
+   "fieldtype": "Data",
+   "label": "Session_Content"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-26 01:31:20.617007",
+ "modified_by": "Administrator",
+ "module": "Lawmes",
+ "name": "SessionsCase",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
